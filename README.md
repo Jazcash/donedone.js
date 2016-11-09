@@ -3,6 +3,7 @@ Donedone API wrapper
 
 ## Example usage
 
+```js
 const Donedone = require("donedone.js");
 
 let donedone = new Donedone({
@@ -14,3 +15,4 @@ let donedone = new Donedone({
 donedone.getCompanies(function(companies){
 	console.log(companies);
 });
+```
