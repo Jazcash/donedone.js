@@ -116,6 +116,20 @@ class DoneDone{
 		return syncRequest(`${this.url}/projects/${projectId}/issues/${issueId}/people/available_for_reassignment.json`);
 	}
 
+	getGlobalFilters(callback){
+		asyncRequest(`${this.url}/global_custom_filters.json`, callback);
+	}
+	getGlobalFiltersSync(){
+		return syncRequest(`${this.url}/global_custom_filters.json`);
+	}
+
+	getIssuesByFilter(filterId, callback){
+		asyncRequest(`${this.url}/issues/by_global_custom_filter/${filterId}.json?take=500`, callback);
+	}
+	getIssuesByFilterSync(filterId){
+		return syncRequest(`${this.url}/issues/by_global_custom_filter/${filterId}.json?take=500`);
+	}
+
 	updateIssue(projectId, issueId, params, callback){
 		request({
 			method: "PUT",
